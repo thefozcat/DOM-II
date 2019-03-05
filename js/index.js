@@ -104,10 +104,18 @@ document.addEventListener('drop', function(event) {
 
 // Main Content Events
 
-const paragraphs = document.querySelectorAll('p');
+const input = document.querySelector('.go-form input');
+const goBtn = document.querySelector('.go-form button');
 
-paragraphs.forEach(p => {
-    p.addEventListener('select', function(event) {
-        p.style.color = 'red';
-    })
+input.addEventListener('select', function() {
+    input.style.color = 'red';
+    alert('You have selected some text');
+})
+
+goBtn.addEventListener('click', function(event) {
+    event.preventDefault();
+});
+
+goBtn.addEventListener('dblclick', function() {
+    alert('One click per customer, please');
 });
