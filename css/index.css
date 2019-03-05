@@ -199,6 +199,10 @@ img {
     font-size: 3rem;
   }
 }
+.main-navigation .nav-container .hidden-dropzone {
+  width: 200px;
+  height: 50px;
+}
 .main-navigation .nav-container .nav {
   width: 350px;
   display: flex;
@@ -304,6 +308,18 @@ img {
 }
 .home .content-destination img {
   border-radius: 10px;
+}
+.home .content-destination form {
+  margin: 3rem 0;
+}
+.home .content-destination form input {
+  padding: 1rem;
+}
+.home .content-destination form button {
+  padding: 1rem 4rem;
+  margin-left: 1rem;
+  background: #17A2B8;
+  border: 1px solid black;
 }
 .home .content-pick {
   padding-top: 30px;
