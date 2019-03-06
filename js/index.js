@@ -94,6 +94,10 @@ input.addEventListener('select', function() {
     alert('You have selected some text');
 })
 
+input.addEventListener('focus', function() {
+    input.style.border = '3px solid blue';
+})
+
 goBtn.addEventListener('click', function(event) {
     event.preventDefault();
 });
