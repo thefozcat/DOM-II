@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Fun Bus Travel Agency - Solution</title>
 
   <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Roboto" rel="stylesheet">
@@ -21,6 +21,7 @@
   <header class="main-navigation">
     <div class="container nav-container">
       <h1 class="logo-heading">Fun Bus</h1>
+      <div class="hidden-dropzone"></div>
       <nav class="nav">
         <a class="nav-link" href="#">Home</a>
         <a class="nav-link" href="#">About Us</a>
@@ -32,7 +33,7 @@
      
   <div class="container home">
     <header class="intro">
-      <img src="img/fun-bus.jpg" alt="bus in the sand">
+      <div class="img-container"><img src="img/fun-bus.jpg" alt="bus in the sand" draggable="true"></div>
       <h2>Welcome To Fun Bus!</h2>
       <p>Traveling expedition modern, clean webdesign blogger clean website theme website modern. Design pretty design, travelblogger adventure WordPress wanderlust theme blogger website expedition theme travelblogger. Adventure fun traveler pretty design website expedition.</p>
     </header>
@@ -60,9 +61,13 @@
     <section class="content-destination">
       <h2>Pick Your Destination</h2>
       <p>Expedition excursion design darn excursion fun, clean simple organized WordPress Travel colorful webdesign. Traveler blogger website design expedition clean excursion traveling.</p>
+      <form action="#" class="go-form">
+        <input type="text" placeholder="Where would you like to go?">
+        <button>Go!</button>
+      </form>
       <img src="img/destination.jpg" alt="Second slide">
     </section>
-    <section class="content-pick">
+    <section class="content-pick hidden-content">
 
       <div class="destination">
         <h4>Fun In The Sun</h4>
