@@ -35,7 +35,6 @@ mainDoc.addEventListener('keydown', function(event) {
 const containerHome = document.querySelector('.home');
 
 containerHome.addEventListener('wheel', function() {
-
     containerHome.style.opacity = '0.5';
 })
 
@@ -59,7 +58,8 @@ navItem.forEach((link) => {
 // Image Events
 
 const images = document.querySelectorAll('img');
-const busImg = document.querySelector('.intro img');
+const busImg = document.querySelector('.img-container');
+const dropZone = document.querySelector('.hidden-dropzone');
 
 images.forEach(img => {
     img.addEventListener('wheel', function(event) {
@@ -68,39 +68,21 @@ images.forEach(img => {
     })
 });
 
-let dragged;
-
-document.addEventListener('drag', function(event) {
-}, false);
-
-document.addEventListener('dragstart', function(event) {
-    dragged = event.busImg;
-}, false);
-
-document.addEventListener('dragover', function(event) {
+busImg.addEventListener('dragover', function(event) {
     event.preventDefault();
-}, false);
+});
 
-document.addEventListener('dragenter', function(event) {
-    if (event.target.className == 'hidden-dropzone') {
-        event.target.style.background = 'yellow';
-    }
-}, false);
+busImg.addEventListener('drop', function(event) {
+    event.target.appendChild(document.querySelector('.img-container img'));
+})
 
-document.addEventListener('dragleave', function(event) {
-    if (event.target.className == 'hidden-dropzone') {
-        event.target.style.background = '';
-    }
-}, false);
-
-document.addEventListener('drop', function(event) {
+dropZone.addEventListener('dragover', function(event) {
     event.preventDefault();
-    if (event.target.className === 'hidden-dropzone') {
-        event.target.style.background = '';
-        dragged.parentNode.removeChild(dragged);
-        event.target.appendChild(dragged);
-    }
-}, false) //Finish drag
+});
+
+dropZone.addEventListener('drop', function(event) {
+    event.target.appendChild(document.querySelector('.img-container img'));
+})
 
 // Main Content Events
 
